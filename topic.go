@@ -94,7 +94,7 @@ func (t *Topic) Subscribe(opts ...SubOpt) (*Subscription, error) {
 
 	sub := &Subscription{
 		topic: t.topic,
-		ch:    make(chan *Message, 32),
+		ch:    make(chan *Message, 1000),
 		ctx:   t.p.ctx,
 	}
 
